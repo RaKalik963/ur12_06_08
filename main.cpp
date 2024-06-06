@@ -11,7 +11,13 @@ int main()
 	int arr[size];
 	for (size_t i = 0; i < size; i++)
 	{
-		arr[size] = srand() % 100;
+		arr[size] = rand() % 100;
+	}
+
+	for (size_t i = 0; i < size; i++)
+	{
+		cout << arr[i] << " ";
+
 	}
 	return 0;
 	system("pause");
