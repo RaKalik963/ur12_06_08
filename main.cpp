@@ -3,15 +3,17 @@
 using namespace std;
 
 template <typename T>
-T diapasone_from_a_to_b(T a, T b)
+T diapasone_from_a_to_b(T a, T b, T sum = 0)
 {
-	if (a > b)
+	if (a > b || a == b)
 	{
 		return 0;
 	}
 	else
 	{
-	    return a + diapasone_from_a_to_b(a + 1, b);
+		sum += b;
+		a++;
+		diapasone_from_a_to_b(a, b, sum);
 	}
 }
 
