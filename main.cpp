@@ -5,18 +5,13 @@ using namespace std;
 template <typename T>
 T diapasone_from_a_to_b(T a, T b)
 {
-	
 	if (a > b)
 	{
-		return 1;
-	}
-	else if (a == b)
-	{
-		return 1;
+		return 0;
 	}
 	else
 	{
-		a += b;
+	    return a + diapasone_from_a_to_b(a + 1, b);
 	}
 }
 
