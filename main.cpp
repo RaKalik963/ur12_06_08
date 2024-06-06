@@ -16,7 +16,7 @@ T diapasone_from_a_to_b(T a, T b, T sum = 0)
 		diapasone_from_a_to_b(a, b, sum);
 	}
 }
-
+//grtrt
 int main()
 {
 	int a, b;
