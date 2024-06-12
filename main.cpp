@@ -4,9 +4,22 @@ using namespace std;
 
 
 
-int main()
-{
+int power(int num, int degree) {
+    if (degree == 0) {
+        return 1; 
+    }
+    else {
+        return num * power(num, degree - 1); 
+    }
+}
 
-	return 0;
-	system("pause");
+int main() {
+    int num, degree;
+    cout << "enter num ";
+    cin >> num;
+    cout << "enter degree ";
+    cin >> degree;
+
+    cout << num << "^" << degree << " = " << power(num, degree) << endl;
+    return 0;
 }
