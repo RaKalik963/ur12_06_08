@@ -1,24 +1,45 @@
 #include <iostream>
 #include <ctime>
-using namespace std;
 
 
-
-int main()
+int sumOfSubarray(int array[], int start) 
 {
-	srand(0);
-	const int size = 100;
-	int arr[size];
-	for (size_t i = 0; i < size; i++)
-	{
-		arr[size] = rand() % 100;
-	}
+    int sum = 0;
+    for (int i = start; i < start + 10; ++i) {
+        sum += array[i];
+    }
+    return sum;
+}
 
-	for (size_t i = 0; i < size; i++)
-	{
-		cout << arr[i] << " ";
+int findMinSumPosition(int array[], int start, int SIZE) 
+{
+    if (start > SIZE - 10) {
+        return -1; 
+    }
+    int nextMinPosition = findMinSumPosition(array, start + 1); 
+    if (nextMinPosition == -1 || sumOfSubarray(array, start) < sumOfSubarray(array, nextMinPosition)) {
+        return start; 
+    }
+    else {
+        return nextMinPosition; 
+    }
+}
 
-	}
-	return 0;
-	system("pause");
+int main() 
+{
+    const int SIZE = 100;
+    int array[SIZE];
+    
+
+    srand(time(0));
+
+    for (int i = 0; i < SIZE; ++i) 
+    {
+        array[i] = rand() % 100; 
+    }
+    int minPosition = findMinSumPosition(array, 0);
+
+    std::cout << "The starting position of the minimum subarray: " << minPosition << std::endl;
+
+    return 0;
 }
