@@ -52,7 +52,7 @@ void playGame(int secret[], int attempts) {
         cout << "Congratulations! You've guessed the number in " << attempts << " attempts." << endl;
     }
     else {
-        cout << "Bulls: " << bulls << ", Cows: " << cows << endl;
+        cout << "correct num = " << bulls << ", correct but in the wrong place " << cows << endl;
         playGame(secret, attempts + 1);
     }
 }
